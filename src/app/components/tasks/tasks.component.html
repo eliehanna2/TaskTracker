@@ -1,0 +1,9 @@
+<!-- $event gets the task that we emitted from the add-task component -->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!-- to loop 1 div over tasks array: -->
+<!-- p *ngFor="let task of tasks">{{ task.text }}</p -->
+<app-task-item *ngFor="let task of tasks" [task]="task"
+(onDeleteTask)="deleteTask(task)" 
+(onToggleReminder)="toggleReminder(task)"
+>
+</app-task-item>
